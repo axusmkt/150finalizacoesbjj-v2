@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --color-primary-bg: #0B0B0B;
+  --color-secondary-bg: #121212;
+  --color-highlight-red: #FF2E2E;
+  --color-premium-green: #00C853;
+  --color-premium-green-hover: #00E676;
+}
+
+@layer utilities {
+  .tatami-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  
+  .red-glow {
+    box-shadow: 0 0 50px -10px rgba(255, 46, 46, 0.3);
+  }
+
+  .green-glow {
+    box-shadow: 0 10px 20px -10px rgba(0, 200, 83, 0.4);
+  }
+
+  .text-glow-red {
+    text-shadow: 0 0 20px rgba(255, 46, 46, 0.5);
+  }
+
+  .premium-card {
+    background-color: #121212;
+    border: 1px solid #1F1F1F;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply bg-[#0B0B0B] text-[#BFBFBF] antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  @apply text-white;
+}
+
+::selection {
+  @apply bg-[#FF2E2E] text-white;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-duration: 400ms;
+}
